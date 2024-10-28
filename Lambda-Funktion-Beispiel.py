@@ -7,7 +7,15 @@ def print_expenses(expenses):
     for expense in expenses:   
         print(f'Amount: {expense['expense']}, Category: {expense['category']}')
 
-expenses = []
+def total_expense(expenses):
+    return sum(map(lambda expense: expense['expense'], expenses))  
+
+def filter_expense():
+    pass
+
+expenses = [] # Kurz erklärt: das ist die Leere Liste mit dem Dictionary die wir bei der Auswahl der Zahlen und 
+                
+            # und darauffolgenden Aufruf der Funktion immer wieder als Argument mitsenden. 
 while True:
     print('\nExpense Tracker')
     print('1. Add an expense')
@@ -28,3 +36,6 @@ while True:
         print('This are all ur expenses: ')
         print_expenses(expenses)
         
+    elif choice == '3':
+        total_expense(expenses)
+        print('Total Ausgabe Junge: ', total_expense(expenses))
